@@ -1,0 +1,36 @@
+<div class="table-container">
+    <h2>Uploaded Documents</h2>
+    <button class="btn btn-primary mb-3" (click)="navigateToUploadDoc()">+ Upload Documents</button>
+    <button class="btn btn-primary mb-3" (click)="referesh()">
+        <i class="fas fa-sync-alt"></i>
+    </button>
+    <button class="btn btn-primary mb-3" (click)="back()">Back
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <table *ngIf="documents.length > 0; else noData">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>File Type</th>
+                <th>Uploaded At</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doc of documents">
+                <td>{{ doc.id }}</td>
+                <td>{{ doc.userName }}</td>
+                <td>{{ doc.filetype }}</td>
+                <td>{{ doc.uploadedAt | date: 'medium' }}</td>
+                <td>
+                    <button (click)="downloadFile(doc)" [disabled]="!doc.filePicture">Download</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ng-template #noData>
+        <p>No documents found.</p>
+    </ng-template>
+</div>

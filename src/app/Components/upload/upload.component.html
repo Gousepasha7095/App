@@ -1,0 +1,26 @@
+<div class="upload-container">
+    <h2>Upload PDF Document</h2>
+
+    <form [formGroup]="uploadForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="userName">User Name</label>
+            <input id="userName" type="text" formControlName="userName" />
+            <div *ngIf="uploadForm.get('userName')?.touched && uploadForm.get('userName')?.invalid">
+                User name is required.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="file">Choose PDF File</label>
+            <input type="file" id="file" (change)="onFileSelected($event)" accept="application/pdf" />
+            <div *ngIf="uploadForm.get('file')?.touched && uploadForm.get('file')?.invalid">
+                PDF file is required.
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="uploadForm.invalid">Upload</button>
+        <button type="submit" (click)="onClick()">Cancel</button>
+    </form>
+
+    <p *ngIf="responseMessage" class="response">{{ responseMessage }}</p>
+</div>

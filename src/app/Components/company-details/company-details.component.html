@@ -1,0 +1,51 @@
+<div class="modern-container">
+    <h2>Add Company</h2>
+
+    <button type="button" class="btn-back" (click)="back()">
+        ← Back
+    </button>
+
+    <div *ngIf="errorMessage" class="alert-danger-modern">
+        {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="companyForm" (ngSubmit)="onSubmit()">
+        <div class="form-field"
+            [class.has-error]="companyForm.get('companyName')?.invalid && companyForm.get('companyName')?.touched">
+            <label for="companyName">Company Name</label>
+            <input type="text" id="companyName" formControlName="companyName" />
+            <small *ngIf="companyForm.get('companyName')?.invalid && companyForm.get('companyName')?.touched">
+                Company Name is required (min 3 characters)
+            </small>
+        </div>
+
+        <div class="form-field"
+            [class.has-error]="companyForm.get('companyCode')?.invalid && companyForm.get('companyCode')?.touched">
+            <label for="companyCode">Company Code</label>
+            <input type="number" id="companyCode" formControlName="companyCode" />
+            <small *ngIf="companyForm.get('companyCode')?.invalid && companyForm.get('companyCode')?.touched">
+                Enter a valid number
+            </small>
+        </div>
+
+        <div class="form-field" [class.has-error]="companyForm.get('ceo')?.invalid && companyForm.get('ceo')?.touched">
+            <label for="ceo">CEO</label>
+            <input type="text" id="ceo" formControlName="ceo" />
+            <small *ngIf="companyForm.get('ceo')?.invalid && companyForm.get('ceo')?.touched">
+                CEO name is required (min 3 characters)
+            </small>
+        </div>
+
+        <div class="button-group-modern">
+            <button type="submit" [disabled]="companyForm.invalid" class="btn-modern primary">Submit</button>
+            <button type="button" class="btn-modern secondary" (click)="cancel()">Cancel</button>
+
+
+            <!-- <div class="buttons-right-align" *ngIf="isEdit">
+                <button mat-raised-button color="primary" (click)="updateCompany()">
+                    update
+                </button>
+            </div> -->
+        </div>
+    </form>
+</div>

@@ -1,0 +1,174 @@
+/* Centering the login container */
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  animation: moveBackground 10s infinite alternate ease-in-out;
+}
+
+/* Animated background movement */
+@keyframes moveBackground {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+
+/* Glassmorphism effect */
+.login-container {
+  width: 400px;
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+/* Add a subtle scale effect */
+.login-container:hover {
+  transform: scale(1.02);
+}
+
+/* Heading */
+h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* Labels */
+label {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 5px;
+  animation: slideIn 1.5s ease-in-out;
+}
+
+/* Input fields */
+input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  font-size: 16px;
+  color: white;
+  outline: none;
+  transition: 0.3s;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Glowing effect on focus */
+input:focus {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
+}
+
+/* Stylish login button */
+.login-btn {
+  width: 50%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  animation: pulse 2s infinite;
+}
+
+/* Button hover effect */
+.login-btn:hover {
+  background: linear-gradient(135deg, #ff6b81, #ff3e41);
+  transform: scale(1.05);
+}
+
+/* Message Styling */
+.message {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: bold;
+  color: #ffeb3b;
+}
+
+/* Register link */
+.register-link {
+  margin-top: 15px;
+  font-size: 14px;
+  color: white;
+}
+   
+.register-link a {
+  color: #efdf4a;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

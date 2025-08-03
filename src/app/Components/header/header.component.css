@@ -1,0 +1,42 @@
+.header {
+   background: linear-gradient(135deg, #1e3c72, #2a5298); 
+  color: white;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Ensures space between items */
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-icon {
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.user-icon:hover {
+  color: #ffeb3b; /* Change color on hover */
+}
+
+.running-text {
+  font-size: 24px;
+  font-weight: bold;
+  color:white;
+  white-space: nowrap; /* Prevent text from wrapping */
+  overflow: hidden; /* Hide overflow */
+  display: inline-block;
+  animation: runText 10s linear infinite; /* Apply animation */
+}
+
+@keyframes runText {
+  0% {
+    transform: translateX(-100%); /* Start off the screen to the right */
+  }
+  100% {
+    transform: translateX(100%); /* End off the screen to the left */
+  }
+}

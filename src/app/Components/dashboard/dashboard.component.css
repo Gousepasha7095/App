@@ -1,0 +1,75 @@
+/* General dashboard styling */
+.dashboard-container {
+  display: flex;
+  height: calc(100vh - 60px);
+  /* Adjust height based on header */
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  /* Soft gradient */
+}
+
+/* Sidenav Styling - Fixed width */
+app-sidenav {
+  width: 250px;
+  /* Ensure a fixed width */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  background: #1565c0;
+  /* Deep blue */
+  color: white;
+  padding: 20px;
+}
+
+/* Content should not overlap with sidenav */
+.dashboard-content {
+  flex: 1;
+  /* Takes remaining space */
+  padding: 20px;
+  background: #ffffff;
+  /* Clean white */
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin: 20px;
+  overflow-y: auto;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Responsive grid */
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+  background: #42a5f5;
+  /* Light blue */
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.dashboard-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  background: #1e88e5;
+  /* Darker blue */
+}
+
+/* Footer */
+app-footer {
+  background: #0d47a1;
+  /* Deepest blue */
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

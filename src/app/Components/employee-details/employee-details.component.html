@@ -1,0 +1,126 @@
+<div class="container">
+    <h2>Add Employee Payroll</h2>
+    <button type="button" class="btn btn-danger" (click)="back()">Back</button>
+
+    <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+    </div>
+
+    <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+            <label for="companyName">Company Name:</label>
+            <select class="form-control" formControlName="companyName">
+                <option value="">Select Company</option>
+                <option *ngFor="let comp of companyData" [value]="comp.companyName">
+                    {{ comp.companyName }}
+                </option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label>Company Code:</label>
+            <input class="form-control" type="text" formControlName="companyCode" readonly />
+        </div>
+
+        <div class="form-group">
+            <label for="ceo">Employee Name</label>
+            <div class="input-container">
+                <input type="text" id="employeeName" class="form-control"
+                    [class.is-invalid]="employeeForm.get('employeeName')?.invalid && employeeForm.get('employeeName')?.touched"
+                    formControlName="employeeName">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('employeeName')?.invalid && employeeForm.get('employeeName')?.touched">
+                    Employee name is required (min 3 chars)
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="companyCode">Employee Code:</label>
+            <div class="input-container">
+                <input type="number" id="employeeCode" class="form-control"
+                    [class.is-invalid]="employeeForm.get('employeeCode')?.invalid && employeeForm.get('employeeCode')?.touched"
+                    formControlName="employeeCode">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('employeeCode')?.invalid && employeeForm.get('employeeCode')?.touched">
+                    Employee Code must be a valid number
+                </span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="companyName">Total Lpa:</label>
+            <div class="input-container">
+                <input type="number" id="totalLpa" class="form-control"
+                    [class.is-invalid]="employeeForm.get('totalLpa')?.invalid && employeeForm.get('totalLpa')?.touched"
+                    formControlName="totalLPA">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('totalLpa')?.invalid && employeeForm.get('totalLpa')?.touched">
+                    TotalLPA is required (min 3 chars)
+                </span>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <label for="ceo">Gross pay</label>
+            <div class="input-container">
+                <input type="number" id="grossPay" class="form-control"
+                    [class.is-invalid]="employeeForm.get('grossPay')?.invalid && employeeForm.get('grossPay')?.touched"
+                    formControlName="grossPay">
+                <span class="error-box" *ngIf="employeeForm.get('grossPay')?.invalid && employeeForm.get('grossPay')?.touched">
+                    Gross pay is required (min 3 chars)
+                </span>
+            </div>
+        </div> -->
+
+        <div class="form-group">
+            <label for="ceo">Medicare Tax</label>
+            <div class="input-container">
+                <input type="number" id="medicareTax" class="form-control"
+                    [class.is-invalid]="employeeForm.get('medicareTax')?.invalid && employeeForm.get('medicareTax')?.touched"
+                    formControlName="medicareTax">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('medicareTax')?.invalid && employeeForm.get('medicareTax')?.touched">
+                    Medicare is required (min 3 chars)
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ceo">StateIncome Tax</label>
+            <div class="input-container">
+                <input type="number" id="stateIncomeTax" class="form-control"
+                    [class.is-invalid]="employeeForm.get('stateIncomeTax')?.invalid && employeeForm.get('stateIncomeTax')?.touched"
+                    formControlName="stateIncomeTax">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('stateIncomeTax')?.invalid && employeeForm.get('stateIncomeTax')?.touched">
+                    StateIncomeTax is required (min 3 chars)
+                </span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ceo">Federal Tax</label>
+            <div class="input-container">
+                <input type="number" id="federalIncomeTax" class="form-control"
+                    [class.is-invalid]="employeeForm.get('federalIncomeTax')?.invalid && employeeForm.get('federalIncomeTax')?.touched"
+                    formControlName="federalIncomeTax">
+                <span class="error-box"
+                    *ngIf="employeeForm.get('federalIncomeTax')?.invalid && employeeForm.get('federalIncomeTax')?.touched">
+                    FederalIncomeTax is required (min 3 chars)
+                </span>
+            </div>
+        </div>
+
+        <div class="button-group">
+            <button type="submit" class="btn btn-success" [disabled]="employeeForm.invalid">Submit</button>
+            <button type="button" class="btn btn-danger" (click)="cancel()">Cancel</button>
+
+        </div>
+    </form>
+</div>
+
+<input [(ngModel)]="inputName" class="form-control mb-3" placeholder="Enter a name" />
+
+<!-- Pass data to child -->
+<app-demo [name]="inputName"></app-demo>

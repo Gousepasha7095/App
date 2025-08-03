@@ -1,0 +1,63 @@
+<div class="company-container">
+  <h2 class="table-title">Employee Payroll List</h2>
+  <button class="btn btn-primary mb-3" (click)="navigateToAddEmployeePayroll()">+ Add Employee Payroll</button>
+  <button class="btn btn-primary mb-3" (click)="referesh()">
+    <i class="fas fa-sync-alt"></i>
+  </button>
+  <button class="btn btn-primary mb-3" (click)="back()">Back
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped custom-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Company Name</th>
+          <th>Company Code</th>
+          <th>Employee Name</th>
+          <th>Employee Code</th>
+          <th>Total LPA</th>
+          <th>GossPay</th>
+          <th>Federal Tax</th>
+          <th>Medicare Tax</th>
+          <th>StateIncome Tax</th>
+          <th>Total Tax Amount</th>
+          <th>Net To Grass</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let employee of employees">
+          <td>{{ employee.id }}</td>
+          <td>{{ employee.companyName }}</td>
+          <td>{{employee.companyCode}}</td>
+          <td>{{ employee.employeeName }}</td>
+          <td>{{ employee.employeeCode }}</td>
+          <td>{{employee.totalLPA}}</td>
+          <td>{{employee.grossPay}}</td>
+          <td>{{ employee.federalIncomeTax }}</td>
+          <td>{{ employee.medicareTax }}</td>
+          <td>{{ employee.stateIncomeTax }}</td>
+          <td>{{ employee.taxAmount }}</td>
+          <td>{{ employee.netToGross }}</td>
+
+          <td>
+            <!-- <button class="btn btn-warning btn-sm" (click)="updateCompany(company)">Edit</button> -->
+            <button class="btn btn-danger btn-sm"
+              (click)="employee.id ? deleteEmployee(employee.id) : null">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="pagination-container">
+    <button class="pagination-btn" (click)="onPageChange(page - 1)" [disabled]="page === 0">
+      ◀ Previous
+    </button>
+    <span class="page-info">Page {{ page + 1 }} of {{ getTotalPages() }}</span>
+    <button class="pagination-btn" (click)="onPageChange(page + 1)" [disabled]="page + 1 >= getTotalPages()">
+      Next ▶
+    </button>
+  </div>
+</div>

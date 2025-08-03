@@ -1,0 +1,126 @@
+/* Container */
+.modern-container {
+  max-width: 550px;
+  margin: 50px auto;
+  background: #ffffff;
+  padding: 35px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  font-family: 'Inter', sans-serif;
+}
+
+/* Heading */
+.modern-container h2 {
+  text-align: center;
+  font-weight: 600;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: #2d3748;
+}
+
+/* Back Button */
+.btn-back {
+  background: none;
+  border: none;
+  color: #4a5568;
+  font-weight: 500;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Form Field */
+.form-field {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-field label {
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+.form-field input {
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.form-field input:focus {
+  border-color: #3182ce;
+  outline: none;
+  box-shadow: 0 0 5px rgba(49, 130, 206, 0.4);
+}
+
+.form-field.has-error input {
+  border-color: #e53e3e;
+}
+
+.form-field small {
+  color: #e53e3e;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+/* Alert */
+.alert-danger-modern {
+  background-color: #fed7d7;
+  color: #822727;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+/* Buttons */
+.button-group-modern {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+}
+
+.btn-modern {
+  flex: 1;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-modern.primary {
+  background-color: #3182ce;
+  color: white;
+}
+
+.btn-modern.primary:hover {
+  background-color: #2b6cb0;
+}
+
+.btn-modern.secondary {
+  background-color: #a0aec0;
+  color: white;
+}
+
+.btn-modern.secondary:hover {
+  background-color: #718096;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .button-group-modern {
+    flex-direction: column;
+  }
+
+  .btn-modern {
+    width: 100%;
+  }
+}

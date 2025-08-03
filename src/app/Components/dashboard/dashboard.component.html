@@ -1,0 +1,49 @@
+<!-- <app-header></app-header>
+
+<div class="dashboard-container">
+  <app-sidenav></app-sidenav>
+
+  <div class="dashboard-container">
+  <app-footer></app-footer>
+
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+</div> -->
+<app-header></app-header>
+
+<div class="dashboard-container">
+  <app-sidenav></app-sidenav>
+
+  <div class="dashboard-content">
+    <h1>Welcome to Your Dashboard</h1>
+    <p>Here you can manage your data, view reports, and access key features.</p>
+
+    <div class="dashboard-grid">
+      <!-- Card 1 -->
+      <div class="dashboard-card">
+        <img src="https://via.placeholder.com/300x200" alt="Analytics">
+        <h3>Analytics</h3>
+        <p>Track your company's performance with real-time data.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="dashboard-card">
+        <img src="https://via.placeholder.com/300x200" alt="Reports">
+        <h3>Reports</h3>
+        <p>Generate detailed reports and download insights.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <!-- <div class="dashboard-card">
+        <img src="https://via.placeholder.com/300x200" alt="Users">
+        <h3>Manage Users</h3>
+        <p>Update, add, or remove users from the system.</p>
+      </div> -->
+    </div>
+
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<app-footer></app-footer>
